@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "LCBB",
+  "version": "1.0",
+  "description": "Set cookies and configure SOCKS5 proxy",
+  "permissions": [
+    "cookies",
+    "proxy",
+    "tabs",
+    "storage",
+    "http://*/",
+    "https://*/",
+    "<all_urls>"
+  ],
+  "optional_permissions": [
+    "browsingData",
+    "privacy"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
+}

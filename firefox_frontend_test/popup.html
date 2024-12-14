@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCBB</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        label {
+            font-size: 1em;
+            margin-bottom: 5px;
+            display: block;
+            color: #333;
+        }
+        
+        input[type="text"], input[type="password"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 16px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 0.9em;
+            background-color: #fff;
+            transition: border 0.3s;
+        }
+        
+        input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, select:focus {
+            border: 1px solid #007BFF;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:disabled {
+            background-color: #b0b0b0;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        #message, #message2 {
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        #message {
+            background-color: #969091;
+            color: #000000;
+        }
+
+        #message2 {
+            background-color: #969091;
+            color: #000000;
+        }
+
+        hr {
+            margin: 25px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 2px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            label {
+                font-size: 0.9em;
+            }
+
+            input, select {
+                font-size: 0.8em;
+            }
+
+            button {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>LCBB (Lightweight Cookie Baking Box)</h3>
+
+        <div class="section">
+            <label for="endpointhostname">Endpoint:</label>
+            <input type="text" id="endpointhostname" placeholder="Hostname">
+        </div>
+
+        <div class="section">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Username">
+        </div>
+
+        <div class="section">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password">
+        </div>
+
+        <div class="section">
+            <button id="fetchDataButton">Fetch Data</button>
+        </div>
+
+        <div class="section">
+            <label for="userDropdown">Select User:</label>
+            <select id="userDropdown"></select>
+        </div>
+
+        <div class="section">
+            <button id="submitButton" disabled>Submit</button>
+            <div id="message2" hidden></div>
+        </div>
+
+        <hr>
+
+        <h3>Proxy Configuration</h3>
+
+        <div class="section">
+            <label for="hostname">Hostname:</label>
+            <input type="text" id="hostname" placeholder="Enter SOCKS5 Hostname">
+        </div>
+
+        <div class="section">
+            <label for="port">Port:</label>
+            <input type="number" id="port" placeholder="Enter Port (e.g., 1080)">
+        </div>
+
+        <div class="section">
+            <button id="setProxyButton">Set Proxy</button>
+        </div>
+
+        <div id="message" hidden></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
