@@ -7,12 +7,10 @@ import jwt
 import json
 from flask import Flask, request, jsonify
 
-# Secret key for JWT (use a strong, randomly generated key in production)
 SECRET_KEY = 'your-secret-key-hehe'
 
-# In-memory user storage (replace with a database in production)
 users = {
-    "admin": "replacemeplease"  # Replace with actual username and password
+    "admin": "replacemeplease"
 }
 
 # In-memory cookie storage (replace with a database in production)
