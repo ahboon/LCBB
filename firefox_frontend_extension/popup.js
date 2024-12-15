@@ -64,8 +64,8 @@ submitButton.addEventListener("click", () => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      username: "admin",
-      password: "Jessjessjess1234!"
+      username: apiusername.value,
+      password: apipassword.value
     })
   })
     .then(response => response.json())
